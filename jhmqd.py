@@ -2,6 +2,7 @@ import json
 import requests
 from environs import Env
 
+
 env = Env()
 jhmck = env.list('jhmck')
 
@@ -24,10 +25,10 @@ def qd():
         data = {}
         data = json.dumps(data)
         r = requests.post('https://txcs200.m.yunhuiyuan.cn/Member/Sign?bid=c59a6675-ff4e-45ba-bae7-6a3614efb769',headers=header, data=data)
-        print('执行第'+a+1+'个账号签到')
+        b = a+1
         print(r.json())
-        print('------------------------------------')
+        print('执行第%d个账号签到' % b) 
         a = a + 1
+        
 qd()
-
 
